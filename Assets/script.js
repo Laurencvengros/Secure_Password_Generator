@@ -7,12 +7,7 @@ var charUpper = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 var charLower = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var charSpecial = [ "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-",".","/", ":", ";","<", "=", "?", "@", "[", "^", "_", "`", "{", "]", "|", "}", "~" ];
 
-var chosenLength;
-var includeLower;
-var includeUpper;
-var includeNumber
-var includeSpecial;
-var userChoice;
+var passwordInclude =""
 
 // Write password to the #password input
 function writePassword() {
@@ -38,33 +33,28 @@ if ((chosenLength <8) || (chosenLength>128)){
 
 
 var includeLower =confirm ( "Do you want to include lower case letters?");
-var includeUpper =confirm ("Do you want to include upper case letters?");
-var includeNumber =confirm ("Do you want to include numbers");
-var includeSpecial =confirm ("Do you want to include special characters?");
 
-if(!includeLower && !includeUpper && !includeNumber && !includeSpecial){
-  userChoice =alert("You need to choose a criteria");
-
-}else if (includeLower && includeUpper && includeNumber && includeSpecial){
-  userChoice =charLower.concat(charUpper,charSpecial, charNumber);
-  console.log( "characters " + userChoice);
-
-}else if (includeLower && includeUpper && includeNumber && !includeSpecial){
-  userChoice =charLower.concat(charUpper, charNumber)
-  console.log( "characters " + userChoice);
-
-}else if (includeLower && includeUpper && !includeNumber && includeSpecial){
-  userChoice =charLower.concat(charUpper, charSpecial)
-  console.log( "characters " + userChoice);
-
-}else if (includeLower && !includeUpper && includeNumber && includeSpecial){
-  userChoice =charLower.concat(charSpecial, charNumber);
-  console.log("characters " + userChoice)
+if (includeLower){
+  passwordInclude+= charLower;
 }
 
-  
+var includeUpper =confirm ("Do you want to include upper case letters?");
 
+if (includeUpper){
+  passwordInclude+= charUpper;
+}
 
+var includeNumber =confirm ("Do you want to include numbers");
+
+if (includeNumber){
+  passwordInclude+= charNumber;
+}
+
+var includeSpecial =confirm ("Do you want to include special characters?");
+
+if (includeSpecial){
+  passwordInclude+= charSpecial;
+}
 
 
 
