@@ -7,7 +7,7 @@ var charUpper = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 var charLower = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
 var charSpecial = [ "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-",".","/", ":", ";","<", "=", "?", "@", "[", "^", "_", "`", "{", "]", "|", "}", "~" ];
 
-var passwordInclude =""
+var passwordInclude =[]
 
 // Write password to the #password input
 function writePassword() {
@@ -37,34 +37,41 @@ var includeLower =confirm ( "Do you want to include lower case letters?");
 
 if (includeLower){
   passwordInclude += charLower;
-  console.log(passwordInclude)
+  console.log(charLower)
 }
 
 var includeUpper =confirm ("Do you want to include upper case letters?");
 
 if (includeUpper){
   passwordInclude += charUpper;
-  console.log(passwordInclude)
+  console.log(charUpper)
 }
 
-var includeNumber =confirm ("Do you want to include numbers");
+var includeNumber =confirm ("Do you want to include numbers?");
 
 if (includeNumber){
   passwordInclude+= charNumber;
-  console.log(passwordInclude)
+  console.log(charNumber)
 }
 
 var includeSpecial =confirm ("Do you want to include special characters?");
 
 if (includeSpecial){
   passwordInclude+= charSpecial;
-  console.log(passwordInclude)
+  console.log(charSpecial)
 
-}else (!includeLower && !includeUpper && includeNumber && includeSpecial)
+}else if (!includeLower && !includeUpper && !includeNumber && !includeSpecial){
   alert("Try again: You must choose parameters")
 
+}
 
+var randomPassword= ""
+var rng= ""
 
+for (var i=0; i < chosenLength; i++){
+  randomPassword= passwordInclude[Math.floor(Math.random()*chosenLength)];
+}
 
+return randomPassword;
 
 }
