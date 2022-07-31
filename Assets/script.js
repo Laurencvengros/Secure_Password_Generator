@@ -7,6 +7,7 @@ var charLower =[ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m"
 var charSpecial =[ " ", "!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-",".","/", ":", ";","<", "=", "?", "@", "[", "^", "_", "`", "{", "]", "|", "}", "~" ];
 
 
+
 // Write password to the #password input
 function writePassword() {
   var password = generatePassword();
@@ -20,15 +21,12 @@ function writePassword() {
 generateBtn.addEventListener("click", writePassword);
 
 function generatePassword(){
-  var chosenLength =prompt(" Choose the length of your password ( 8-128 characters)")); 
+  var chosenLength =prompt(" Choose the length of your password ( 8-128 characters)"); 
 
-if (chosenLength >= 8 && <=128) {
+if ((chosenLength >= 8) && (chosenLength<= 128)) {
   alert("Your password length will be" + chosenLength);
 
-}else if (chosenLength <8 || >128){
-  alert("Password must be wetween 8 and 128 characters");
+}else if ((chosenLength <8) || (chosenLength>128)){
+  alert("Password must be between 8 and 128 characters");
 }
-
-
-
 }
