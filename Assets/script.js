@@ -27,6 +27,7 @@ function generatePassword(){
 
 if ((chosenLength <8) || (chosenLength>128)){
   alert("Password must be between 8 and 128 characters");
+  var chosenLength =prompt(" Choose the length of your password ( 8-128 characters)");
 
 }else((chosenLength >= 8) && (chosenLength<= 128)) 
   console.log( "Length " + chosenLength);
@@ -35,26 +36,33 @@ if ((chosenLength <8) || (chosenLength>128)){
 var includeLower =confirm ( "Do you want to include lower case letters?");
 
 if (includeLower){
-  passwordInclude+= charLower;
+  passwordInclude += charLower;
+  console.log(passwordInclude)
 }
 
 var includeUpper =confirm ("Do you want to include upper case letters?");
 
 if (includeUpper){
-  passwordInclude+= charUpper;
+  passwordInclude += charUpper;
+  console.log(passwordInclude)
 }
 
 var includeNumber =confirm ("Do you want to include numbers");
 
 if (includeNumber){
   passwordInclude+= charNumber;
+  console.log(passwordInclude)
 }
 
 var includeSpecial =confirm ("Do you want to include special characters?");
 
 if (includeSpecial){
   passwordInclude+= charSpecial;
-}
+  console.log(passwordInclude)
+
+}else (!includeLower && !includeUpper && includeNumber && includeSpecial)
+  alert("Try again: You must choose parameters")
+
 
 
 
