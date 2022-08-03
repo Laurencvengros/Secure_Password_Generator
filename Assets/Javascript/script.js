@@ -78,7 +78,7 @@ function generatePassword(){
 
   // Function takes the users choices and generates and random string of characters of the desired length.
   for (var i=0; i < chosenLength; i++){
-    console.log(passwordInclude[Math.floor(3)])
+    
     randomPassword += passwordInclude[Math.floor(Math.random()*passwordInclude.length)];
    
     
